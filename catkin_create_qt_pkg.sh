@@ -77,7 +77,7 @@ change_pkgxml(){
 
 }
 
-custom_echo "catkin_create_qt_pkg for noetic by github.com/mjlee111" "orange"
+custom_echo "catkin_create_qt_pkg ROS GUI package [github.com/mjlee111]" "orange"
 cur_path="$1"
 package_name="$2"
 depends="$3"
