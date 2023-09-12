@@ -28,7 +28,7 @@ echo 'catkin_create_qt_pkg() {
     shift 
     local dependencies="$@"
     local current_directory="$PWD"
-    /home/"$USER"/.catkin_create_qt_pkg_scripts "$current_directory" "$package_name" "$dependencies"
+    /home/"$USER"/.catkin_create_qt_pkg_scripts/catkin_create_qt_pkg.sh "$current_directory" "$package_name" "$dependencies"
 }' >> ~/.bashrc
 source ~/.bashrc
 

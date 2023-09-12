@@ -93,7 +93,7 @@ if [ -d "$script_path" ]; then
 else
     custom_echo "catkin_create_qt_pkg not installed correctly!!" "red"
     custom_echo "Please re-install it from github.com/mjlee111/catkin_create_qt_pkg" "red"
-    exit 0
+    exit 1
 fi
 custom_echo "Creating ROS GUI package. Package name : $package_name" "green"
 custom_echo "Dependencies : $depends" "green"
