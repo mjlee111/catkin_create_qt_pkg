@@ -82,6 +82,12 @@ cur_path="$1"
 package_name="$2"
 depends="$3"
 script_path="/home/$USER/.catkin_create_qt_pkg_scripts/qt-ros/"
+
+if [[ $package_name =~ [A-Z] || $package_name =~ [^a-zA-Z0-9_] ]]; then
+    custom_echo "ROS package name must not contain Uppercase or Special Characters!" "red"
+    exit 1
+fi
+
 if [ -d "$script_path" ]; then
     loading_animation
 else
