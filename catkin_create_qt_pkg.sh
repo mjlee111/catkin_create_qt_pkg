@@ -142,6 +142,9 @@ cp -R $script_path/ui .
 cp -R $script_path/resources . 
 
 custom_echo "Created ROS GUI package ! Might need to change package.xml file :)" "green"
+custom_echo "Package Overview" "green"
+cd $cur_path/$package_name
+tree
 
 
 
