@@ -22,28 +22,27 @@
 
 namespace % (package)s
 {
+  /*****************************************************************************
+  ** Interface [MainWindow]
+  *****************************************************************************/
+  /**
+   * @brief Qt central, all operations relating to the view part here.
+   */
+  class MainWindow : public QMainWindow
+  {
+    Q_OBJECT
 
-	/*****************************************************************************
-	** Interface [MainWindow]
-	*****************************************************************************/
-	/**
-	 * @brief Qt central, all operations relating to the view part here.
-	 */
-	class MainWindow : public QMainWindow
-	{
-		Q_OBJECT
+  public:
+    MainWindow(int argc, char** argv, QWidget* parent = 0);
+    ~MainWindow();
 
-	public:
-		MainWindow(int argc, char **argv, QWidget *parent = 0);
-		~MainWindow();
+  public Q_SLOTS:
 
-	public Q_SLOTS:
+  private:
+    Ui::MainWindowDesign ui;
+    QNode qnode;
+  };
 
-	private:
-		Ui::MainWindowDesign ui;
-		QNode qnode;
-	};
+}  // namespace s
 
-} // namespace % (package)s
-
-#endif // % (package)s_MAIN_WINDOW_H
+#endif  // % (package)s_MAIN_WINDOW_H

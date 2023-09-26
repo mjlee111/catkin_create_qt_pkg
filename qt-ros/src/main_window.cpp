@@ -20,29 +20,29 @@
 
 namespace % (package)s
 {
+  using namespace Qt;
 
-    using namespace Qt;
+  /*****************************************************************************
+  ** Implementation [MainWindow]
+  *****************************************************************************/
 
-    /*****************************************************************************
-    ** Implementation [MainWindow]
-    *****************************************************************************/
+  MainWindow::MainWindow(int argc, char** argv, QWidget* parent) : QMainWindow(parent), qnode(argc, argv)
+  {
+    ui.setupUi(this);  // Calling this incidentally connects all ui's triggers to on_...() callbacks in this class.
 
-    MainWindow::MainWindow(int argc, char **argv, QWidget *parent)
-        : QMainWindow(parent), qnode(argc, argv)
-    {
-        ui.setupUi(this); // Calling this incidentally connects all ui's triggers to on_...() callbacks in this class.
+    setWindowIcon(QIcon(":/images/icon.png"));
 
-        setWindowIcon(QIcon(":/images/icon.png"));
+    qnode.init();
 
-        qnode.init();
+    QObject::connect(&qnode, SIGNAL(rosShutdown()), this, SLOT(close()));
+  }
 
-        QObject::connect(&qnode, SIGNAL(rosShutdown()), this, SLOT(close()));
-    }
+  MainWindow::~MainWindow()
+  {
+  }
 
-    MainWindow::~MainWindow() {}
+  /*****************************************************************************
+  ** Functions
+  *****************************************************************************/
 
-    /*****************************************************************************
-    ** Functions
-    *****************************************************************************/
-
-} // namespace % (package)s
+}  // namespace s

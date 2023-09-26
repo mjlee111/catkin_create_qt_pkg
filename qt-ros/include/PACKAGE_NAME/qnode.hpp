@@ -31,28 +31,27 @@
 
 namespace % (package)s
 {
+  /*****************************************************************************
+  ** Class
+  *****************************************************************************/
 
-	/*****************************************************************************
-	** Class
-	*****************************************************************************/
+  class QNode : public QThread
+  {
+    Q_OBJECT
+  public:
+    QNode(int argc, char** argv);
+    virtual ~QNode();
+    bool init();
+    void run();
 
-	class QNode : public QThread
-	{
-		Q_OBJECT
-	public:
-		QNode(int argc, char **argv);
-		virtual ~QNode();
-		bool init();
-		void run();
+  Q_SIGNALS:
+    void rosShutdown();
 
-	Q_SIGNALS:
-		void rosShutdown();
+  private:
+    int init_argc;
+    char** init_argv;
+  };
 
-	private:
-		int init_argc;
-		char **init_argv;
-	};
-
-} // namespace % (package)s
+}  // namespace s
 
 #endif /* % (package)s_QNODE_HPP_ */
