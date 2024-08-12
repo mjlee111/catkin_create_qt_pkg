@@ -1,5 +1,8 @@
 # `catkin_create_qt_pkg` Script
 
+### ROS2 Support!
+https://github.com/mjlee111/ros2_create_qt_pkg.git
+
 ### Overview
 The `catkin_create_qt_pkg` script helps in creating a ROS (Robot Operating System) package based on QT5 for GUI development. It automates the initial setup of the package and adds necessary dependencies, allowing developers to start working quickly.
 
